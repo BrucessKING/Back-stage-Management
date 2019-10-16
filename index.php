@@ -20,10 +20,11 @@
 
 	<div id="div0" style="width:200px;height:650px;float:left;background-color: rgb(62,66,79);">
 	<?php 
-		$con = @mysql_connect("localhost", "root", "");
+		$ini = @parse_ini_file("config.ini");
+		$con = @mysql_connect($ini["servername"],$ini["username"],$ini["password"]);
 	    mysql_query("set names 'utf8'");
 	    if($con){
-	    	mysql_select_db("student_manage");
+	    	mysql_select_db($ini["dbname"]);
 	    	$sql = "select * from admin";
 	    	$result = mysql_query($sql);
 	    	while ($row = mysql_fetch_row($result)) {
