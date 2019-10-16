@@ -12,6 +12,6 @@ css框架为layui<br>
 导入message_board.sql：<br>
 进入mysql数据库控制台，如<br>
 ``mysql -u root -p``<br>
-''mysql>use 数据库名''<br>
+``mysql>use 数据库名``<br>
 然后使用source命令，后面参数为脚本文件(如这里用到的message_board.sql)<br>
-''mysql>source message_board.sql''<br>
+``mysql>source message_board.sql``<br>
