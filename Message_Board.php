@@ -53,10 +53,11 @@
 </head>
 <body>
 	<?php 
-		$con = @mysql_connect("localhost","root","");
+		$ini = @parse_ini_file("config.ini");
+		$con = @mysql_connect($ini["servername"],$ini["username"],$ini["password"]);
 		mysql_query("set names 'utf8'");//解决中文乱码问题
 		if($con){
-			mysql_select_db("student_manage");
+			mysql_select_db($ini["dbname"]);
 			$sql = "select * from message_board order by `楼` ASC";
 			$result = mysql_query($sql);
 			$columns=mysql_num_fields($result);
